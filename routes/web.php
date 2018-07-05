@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('login');
 });
+
+Route::post('/', 'UsuarioController@checkIn');
+Route::get('/dashboard', function(){
+	return view('dashboard');
+});

@@ -1,51 +1,32 @@
-@extends('layouts.stub')
+@extends('layouts.principal')
 
-@section('stub_style')
+@section('principal_style')
     <link href="{{ url('/') }}/css/login.css" rel="stylesheet">
 @endsection
 
-@section('stub_content')
+@section('principal_content')
     <div class="container">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 ">
+            <div class="row justify-content-center">
+                <div class="col-4 mt-5">
 
-                    <form class="form-signin" role="form" method="POST"
-                          action="{{ url('/login') }}">
-                        {!! csrf_field() !!}
-                        <h2 class="foram-signin-heading text-center"><?= config('app.name'); ?></h2>
+                    <form class="form-signin " role="form" method="POST"
+                          action="./">
+                        {{ csrf_field() }}
+                        <h2 class="form-signin-heading text-center mb-4 mt-4">Leide Brink</h2>
 
-                        <div class="{{ $errors->has('login') ? ' has-error' : '' }}">
-                            <label class="sr-only">{{trans('user.field.login')}}</label>
-                            <input type="text" autofocus class="form-control" name="login"
-                                   value="{{ old('text') }}"
-                                   placeholder="Login" required>
-
-                            @if ($errors->has('login'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('login') }}</strong>
-                                </span>
-                            @endif
+                        <div class="form-label-group mb-2">
+                            <input type="text" name="login" id="inputUser" class="form-control" placeholder="Usuario" required="" autofocus="">
                         </div>
 
-                        <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label class="sr-only">Senha</label>
-
-                            <input type="password" class="form-control" name="password"
-                                   placeholder="Senha" required>
-
-                            @if ($errors->has('password'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong
-                                </span>
-                            @endif
+                        <div class="form-label-group">
+                            <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Password" required="">
                         </div>
 
-                        <div class="form-group">
-                            <div class="checkbox">
-                                <label> <input type="checkbox" name="remember"> Manter-me conectado
-                                </label>
-                            </div>
+                        <div class="checkbox mb-3">
+                            <label> 
+                                <input type="checkbox" name="remember"> Manter-me conectado
+                            </label>
                         </div>
                         <div class="row">&nbsp;</div>
 
@@ -60,6 +41,7 @@
                         <div class="row">&nbsp;</div>
 
                     </form>
+
                     <div class="row">&nbsp;</div>
                     <div class="row">
                         <div class="text-center" style="margin: 0px !important; font-size: 0px;">

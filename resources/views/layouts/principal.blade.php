@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <link rel="icon" href="{{ url('/') }}/images/favicon.ico" type="image/x-icon"/>
 
-    <title><?= config('app.name'); ?></title>
+    <title>Leide Brink</title>
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
@@ -17,6 +18,7 @@
           type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet'
           type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <!--[if lt IE 9]>
     <script src="{{ url('/') }}/js/html5shiv.min.js"></script>
@@ -34,12 +36,12 @@
 
 
     <?php /* Aqui colocamos espaço para CSS pontuais das páginas que herdam esta */ ?>
-    @yield('stub_styles')
+    @yield('principal_styles')
 
 </head>
 <body id="app-layout">
 
-@yield('stub_content')
+@yield('principal_content')
 
 <!-- JavaScripts -->
 <script src="{{ url('/') }}/js/jquery.js"></script>
@@ -53,7 +55,7 @@
 <script src="{{ url('/') }}/js/funcoes.js"></script>
 
 <?php /* Aqui colocamos espaço para scripts pontuais das páginas que herdam esta */ ?>
-@yield('stub_scripts')
+@yield('principal_scripts')
 
 </body>
 </html>
