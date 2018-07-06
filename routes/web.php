@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 Route::post('/', 'UsuarioController@checkIn');
-Route::get('/dashboard', function(){
+
+Route::get('/home', function(){
 	return view('dashboard');
 });
+
+Route::get('/cliente', 'ClienteController@show');
+Route::get('/cliente/new', 'ClienteController@add');
