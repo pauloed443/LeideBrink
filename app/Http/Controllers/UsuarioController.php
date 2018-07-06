@@ -15,7 +15,7 @@
 										->first();
 			//$result = DB::select('select * from usuario where Login = ?', [$user]);
 			if ($result) {
-				return view('dashboard');
+				return redirect('./');
 				//return view('dashboard');
 			}else{
 				return ('não logado '.$user.' '.$pass);

@@ -6,146 +6,14 @@
 @endsection
 
 @section('principal_content')
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Leide Brink</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav nav-pills mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Cadastro
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Cliente</a>
-              <a class="dropdown-item" href="#">Forma de Pagamento</a>
-              <a class="dropdown-item" href="#">Serviço</a>
-              <a class="dropdown-item" href="#">Usuário</a>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ordem de Serviço</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Financeiro
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Contas a Receber</a>
-              <a class="dropdown-item" href="#">Movimento Caixa</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Relatório
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Agenda de Eventos</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Configurações
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Colaborador</a>
-              <a class="dropdown-item" href="#">Empresa</a>
-              <a class="dropdown-item" href="#">E-mail</a>
-            </div>
-          </li>
-
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <label><a href="{{'./'}}" class="text-light nav-link">Sair</a></label>
-        </form>
-      </div>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar mt-3">
-
-          <div class="sidebar-sticky">
-            <ul class="nav nav-tabs flex-column ">
-
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"role="button" aria-haspopup="true" aria-expanded="false"><span data-feather="file"></span>Cadastro</a>
-                <div class="collapse" aria-labelledby="navbarDropdown">
-                  <ul class="nav nav-list">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Action2</a></li>
-                    <li><a class="dropdown-item" href="#">Action3</a></li>
-                    <li><a class="dropdown-item" href="#">Action4</a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Operações
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Financeiro
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Relatório
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Configurações
-                </a>
-              </li>
-            </ul>
-
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Reportar erro</span>
-              <a class="d-flex align-items-center text-muted" href="#">
-                <span data-feather="plus-circle"></span>
-              </a>
-            </h6>
-          </div>
-        </nav>
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    
+    @include('partials.navbar')
+    
+    <div class="container-fluid justify-content-center">
+      <div class="row mx-5 my-3">
+        
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">Share</button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
-              </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
-              </button>
-            </div>
           </div>
 
           <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
@@ -295,7 +163,7 @@
               </tbody>
             </table>
           </div>
-        </main>
+        
       </div>
     </div>
 @endsection
