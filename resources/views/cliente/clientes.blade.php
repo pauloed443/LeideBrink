@@ -50,16 +50,22 @@
 											</a>
 		                                </td>
 		                            </tr>
-
 	                        	@endforeach
 	                        	<th>
+	                        		<ul class="list-group">
+										<li class="list-group-item d-flex justify-content-between align-items-center">Total
+									    	<span class="badge badge-primary badge-pill">
+									    		{{ $total=count($clientes) }}
+									    	</span>
+										</li>
+									</ul>
 	                        		<p>Registros: {{ $total=count($clientes) }}</p>
 	                        	</th>
 					        @else
 					        	<td> - Nenhum Registro encontrado </td>
 					    </tbody>
 	                            <th>
-					            	<p>Registros: 0</p>
+	                            	Total: <span class=" ml-3 badge badge-primary badge-pill">0</span>
 	                    		</th>
 			                @endif
 			            

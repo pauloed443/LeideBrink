@@ -16,7 +16,14 @@
     			<div class=" p-2"><a href="cliente/new/" class="btn btn-primary">Adicionar</a></div>
     		</div>
 
-            
+            <form>
+            	<div class="form-row">
+            		<div class="col-md-6">
+            			<label>Nome: *</label>
+            			<input type="text" class="form-control" name="nome" placeholder="Nome">
+            		</div>
+            	</div>
+            </form>
         </div>
     </div>
 
