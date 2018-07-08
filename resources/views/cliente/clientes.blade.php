@@ -10,68 +10,72 @@
 	@include('masks.fone')
     @include('partials.navbar')
     
-    <div class="container-fluid justify-content-center">
+    <div class="container-fluid">
     	<div class="container my-5">
     		<div class="row d-flex mx-1">
     			<div class="mr-auto p-2"><h2>Clientes</h2></div>
-    			<div class=" p-2"><a href="cliente/new/" class="btn btn-primary">+ Novo</a></div>
+    			<form action="cliente/new/">
+    				<div class=" p-2"><button type="submit" class="btn btn-primary">+ Novo</button></div>
+    			</form>
     		</div>
-
-                <div class="table-responsive">
-
-                    <table class="table">
-
-                        <thead class="thead-dark">
-                            <th>Nome</th>
-                            <th>Telefone</th>
-                            <th>E-mail</th>
-                            <th>Data Aniversario</th>
-                            <th class="text-center">Operações</th>
-                        </thead>
-                    	<tbody>
-	                    	@if(count($clientes) > 0)
-			            		
-		                        @foreach ($clientes as $value)
-		                            <tr>
-		                                <td class="centro_vertical col-md-4">{{ $value->Nome }}</td>
-		                                <td class="centro_vertical col-md-2"><?= fone($value->Phone1).' / '. fone($value->Phone2) ?></td>
-		                                <td class="centro_vertical col-md-3">{{ $value->Email }}</td>
-		                                <td class="centro_vertical col-md-4">{{ $value->DataAniversario }}</td>
-		                                <td class="centro_vertical col-md-2 text-center">
-		                                	<a href="cliente/edit/{{ $value->Id }}">
-												<span class="btn btn-primary btn-sm">
-											      	<span class="glyphicon glyphicon-edit">Edt</span>
-											  	</span>
-											</a>
-											<a href="cliente/del/{{ $value->Id }}">
-												<span class="btn btn-primary btn-sm">
-											      	<span class="glyphicon glyphicon-remove">Del</span>
-											  	</span>
-											</a>
-		                                </td>
-		                            </tr>
-	                        	@endforeach
-	                        	<th>
-	                        		<ul class="list-group">
-										<li class="list-group-item d-flex justify-content-between align-items-center">Total
-									    	<span class="badge badge-primary badge-pill">
-									    		{{ $total=count($clientes) }}
-									    	</span>
-										</li>
-									</ul>
-	                        		<p>Registros: {{ $total=count($clientes) }}</p>
-	                        	</th>
-					        @else
-					        	<td> - Nenhum Registro encontrado </td>
-					    </tbody>
-	                            <th>
-	                            	Total: <span class=" ml-3 badge badge-primary badge-pill">0</span>
-	                    		</th>
-			                @endif
-			            
-                    </table>
-                </div>
-            
+    		<div class="table-responsive">
+                <table class="table table-sm table-bordered">
+                    <thead class="thead-dark">
+                    	<tr>
+                    		<th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Dt. Aniver.</th>
+                            <th scope="text-center">Operações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	@if(count($clientes) > 0)
+	                        @foreach ($clientes as $value)
+	                            <tr>
+	                            	<td>{{ $value->Id }}</td>
+	                                <td scope="row">{{ $value->Nome }}</td>
+	                                <td>{{ fone($value->Phone1).' / '. fone($value->Phone2) }}</td>
+	                                <td>{{ $value->Email }}</td>
+	                                <td>{{ $value->DataAniversario }}</td>
+	                                <td>
+	                                	<a href="cliente/edit/{{ $value->Id }}">
+											<span class="btn btn-primary btn-sm">
+										      	<span class="glyphicon glyphicon-edit">Edt</span>
+										  	</span>
+										</a>
+										<a href="cliente/del/{{ $value->Id }}">
+											<span class="btn btn-danger btn-sm">
+										      	<span class="glyphicon glyphicon-remove">Del</span>
+										  	</span>
+										</a>
+	                                </td>
+	                            </tr>
+                        	@endforeach
+                    		<div>
+                        		<ul class="list-group">
+									<li class="list-group-item d-flex justify-content-between align-items-center">Total =
+								    	<span class="badge badge-primary badge-pill">
+								    		{{ $total=count($clientes) }}
+								    	</span>
+									</li>
+								</ul>
+                    		</div>
+				        @else
+				        	<div>
+                        		<ul class="list-group">
+									<li class="list-group-item d-flex justify-content-between align-items-center">Total =
+								    	<span class="badge badge-primary badge-pill">
+								    		{{ $total=count($clientes) }}
+								    	</span>
+									</li>
+								</ul>
+                    		</div>
+		                @endif
+		            </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

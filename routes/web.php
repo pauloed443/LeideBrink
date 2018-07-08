@@ -22,4 +22,8 @@ Route::get('/home', function(){
 });
 
 Route::get('/cliente', 'ClienteController@show');
-Route::get('/cliente/new', 'ClienteController@add');
+Route::get('/cliente/new', 'ClienteController@showAdd');
+Route::post('/cliente/save', 'ClienteController@add');
+Route::get('/cliente/del/{id}', 'ClienteController@remove');
+Route::get('/cliente/edit/{id}', 'ClienteController@showUpdate');
+Route::post('/cliente/edit/{id}', 'ClienteController@update');
