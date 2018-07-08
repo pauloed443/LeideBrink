@@ -17,6 +17,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{url('/cliente')}}">Cliente</a>
+          <a class="dropdown-item" href="#">Endereço</a>
           <a class="dropdown-item" href="#">Forma de Pagamento</a>
           <a class="dropdown-item" href="#">Serviço</a>
           <a class="dropdown-item" href="#">Usuário</a>
