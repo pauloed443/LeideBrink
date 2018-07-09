@@ -113,15 +113,6 @@
 		}
 	</script>
 
-	<script type="text/javascript">
-		function SoNumero(e){
-		    var tecla=(window.event)?event.keyCode:e.which;   
-		    if((tecla>47 && tecla<58)) return true;
-		    else{
-		    	if (tecla==8 || tecla==0) return true;
-			else  return false;
-		    }
-	}
-    </script>
-
+    @include('masks.sonumeros')
+    
 @endsection
