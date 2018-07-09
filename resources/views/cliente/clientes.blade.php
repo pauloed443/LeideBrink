@@ -34,8 +34,8 @@
                     	@if(count($clientes) > 0)
 	                        @foreach ($clientes as $value)
 	                            <tr>
-	                            	<td>{{ $value->Id }}</td>
-	                                <td scope="row">{{ $value->Nome }}</td>
+	                            	<td scope="row">{{ $value->Id }}</td>
+	                                <td>{{ $value->Nome }}</td>
 	                                <td>{{ fone($value->Phone1).' / '. fone($value->Phone2) }}</td>
 	                                <td>{{ $value->Email }}</td>
 	                                <td>{{ $value->DataAniversario }}</td>
@@ -63,6 +63,8 @@
 								</ul>
                     		</div>
 				        @else
+				        	<td scope="row">-</td>
+	                        <td>Nenhuma forma de pagamento cadastrada</td>
 				        	<div>
                         		<ul class="list-group">
 									<li class="list-group-item d-flex justify-content-between align-items-center">Total =
