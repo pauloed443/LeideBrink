@@ -27,3 +27,10 @@ Route::post('/cliente/save', 'ClienteController@add');
 Route::get('/cliente/del/{id}', 'ClienteController@remove');
 Route::get('/cliente/edit/{id}', 'ClienteController@showUpdate');
 Route::post('/cliente/edit/{id}', 'ClienteController@update');
+
+Route::get('/forma-pagamento', 'FormaPagamentoController@show');
+Route::get('/forma-pagamento/new', 'FormaPagamentoController@showAdd');
+Route::post('/forma-pagamento/save', 'FormaPagamentoController@add');
+Route::get('/forma-pagamento/del/{id}', 'FormaPagamentoController@remove');
+Route::get('/forma-pagamento/edit/{id}', 'FormaPagamentoController@showUpdate');
+Route::post('/forma-pagamento/edit/{id}', 'FormaPagamentoController@update');
